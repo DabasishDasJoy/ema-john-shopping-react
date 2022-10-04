@@ -3,9 +3,9 @@ import { Button, Dropdown, Menu, Navbar } from "react-daisyui";
 import { NavLink } from "react-router-dom";
 import logo from "../../images/Logo.svg";
 
-const Header = () => {
+const Header = ({ toggleVisible }) => {
   return (
-    <Navbar className="bg-[#1C2B35] h-[80px] lg:px-[112px]">
+    <Navbar className="bg-[#1C2B35] h-[80px] lg:px-[112px] fixed top-0 z-10">
       <Navbar.Start className="flex justify-between">
         <NavLink to={"/"}>
           <img src={logo} alt="" />
@@ -30,7 +30,14 @@ const Header = () => {
       </Navbar.Start>
       <Navbar.Center className="hidden lg:flex">
         <Menu horizontal className="p-0 text-white flex gap-8">
-          <NavLink to={"/order"}>Order</NavLink>
+          <NavLink
+            to={"/order"}
+            className={({ isActive }) =>
+              isActive ? "text-orange-400" : undefined
+            }
+          >
+            Order
+          </NavLink>
           <NavLink to={"/order-preview"}>Order Preview</NavLink>
           <NavLink to={"/inventory"}>Inventory</NavLink>
           <NavLink to={"/login"}>Login</NavLink>
