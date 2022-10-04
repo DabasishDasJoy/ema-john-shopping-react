@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import { addToDb } from "../../utilities/fakedb";
+import { addToDb, getSavedCart } from "../../utilities/fakedb";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 
@@ -28,9 +28,23 @@ const Order = () => {
     }
 
     setCart(newCart);
+    console.log(cart);
     //addToDb
     addToDb(selectedProduct.id);
   };
+
+  //Load cart on load
+  useEffect(() => {
+    const savedCart = getSavedCart();
+    let newCart = [];
+    for (const savedCartItem in savedCart) {
+      const item = products.find((product) => product.id === savedCartItem);
+      item.quantity = savedCart[savedCartItem];
+      newCart.push(item);
+    }
+
+    setCart(newCart);
+  }, [products]);
 
   return (
     <div className="grid grid-cols-5 mt-[80px]">

@@ -33,10 +33,10 @@ const Cart = ({ cart }) => {
       </div>
 
       <div className="flex flex-col gap-[16px] justify-center items-center">
-        <button className="w-[232px] h-[48px] rounded bg-[#FF3030] text-white font-normal leading-[20px] flex justify-center items-center gap-1">
+        <button className="w-[80%] h-[48px] rounded bg-[#FF3030] text-white font-normal leading-[20px] flex justify-center items-center gap-1">
           Clear Cart <TrashIcon className="h-4 w-4"></TrashIcon>
         </button>
-        <button className="w-[232px] h-[48px] rounded bg-[#FF9900] text-white font-normal leading-[20px] flex justify-center items-center gap-1">
+        <button className="w-[80%] h-[48px] rounded bg-[#FF9900] text-white font-normal leading-[20px] flex justify-center items-center gap-1">
           Review Order <ArrowRightIcon className="h-4 w-4 stroke-2" />
         </button>
       </div>
