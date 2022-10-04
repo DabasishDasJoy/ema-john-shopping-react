@@ -1,7 +1,14 @@
-import React from "react";
+import { ShoppingCartIcon } from "@heroicons/react/24/solid";
+import React, { useState } from "react";
 import { Card } from "react-daisyui";
 
-const Product = ({ product: { id, name, seller, ratings, img, price } }) => {
+const Product = ({
+  product,
+  addToCartHandler,
+  product: { id, name, seller, ratings, img, price },
+}) => {
+  //button state
+  const [btnAdded, setBtnAdded] = useState("Add to Cart");
   return (
     <Card className="w-[300px] h-[508px] rounded-lg border-[1px] border-[#95A0A7]">
       <Card.Image
@@ -25,8 +32,16 @@ const Product = ({ product: { id, name, seller, ratings, img, price } }) => {
           </p>
         </div>
       </Card.Body>
-      <button className="bg-[#FFE0B3] absolute bottom-0 w-full m-0 h-[48px] border-t-[1px] border-t-[#95A0A7] font-normal text-[15px] leadin-[18px] tracking-[0.0125em] text-[#0E161A] ">
-        Add to Cart
+      <button
+        className="bg-[#FFE0B3] absolute bottom-0 w-full m-0 h-[48px] border-t-[1px] border-t-[#95A0A7] font-normal text-[15px] leadin-[18px] tracking-[0.0125em] text-[#0E161A] flex justify-center items-center gap-1"
+        onClick={() => {
+          if (btnAdded === "Add to Cart") {
+            setBtnAdded("Added");
+          }
+          addToCartHandler(product);
+        }}
+      >
+        {btnAdded} <ShoppingCartIcon className="w-4 h-4" />
       </button>
     </Card>
   );
