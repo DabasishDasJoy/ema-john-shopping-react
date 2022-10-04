@@ -3,7 +3,7 @@ import img from "../../images/giphy.gif";
 
 const Home = () => {
   return (
-    <div className="flex flex-col gap-5 p-5">
+    <div className="flex flex-col gap-5 p-5 mt-[80px]">
       <h1 className="text-5xl text-center font-medium">
         Welcome to Ema John Shop
       </h1>

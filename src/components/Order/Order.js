@@ -1,5 +1,6 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 
 const Order = () => {
@@ -12,7 +13,9 @@ const Order = () => {
           <Product product={product} key={product.id}></Product>
         ))}
       </div>
-      <div className=" bg-[#FF9900] bg-opacity-[30%] col-span-1">5454</div>
+      <div className=" bg-[#FF9900] bg-opacity-[30%] col-span-1">
+        <Cart></Cart>
+      </div>
     </div>
   );
 };

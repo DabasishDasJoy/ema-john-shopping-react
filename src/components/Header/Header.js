@@ -33,14 +33,43 @@ const Header = ({ toggleVisible }) => {
           <NavLink
             to={"/order"}
             className={({ isActive }) =>
-              isActive ? "text-orange-400" : undefined
+              isActive
+                ? "text-orange-400"
+                : "hover:text-orange-400 transition delay-75"
             }
           >
             Order
           </NavLink>
-          <NavLink to={"/order-preview"}>Order Preview</NavLink>
-          <NavLink to={"/inventory"}>Inventory</NavLink>
-          <NavLink to={"/login"}>Login</NavLink>
+          <NavLink
+            to={"/order-preview"}
+            className={({ isActive }) =>
+              isActive
+                ? "text-orange-400"
+                : "hover:text-orange-400 transition delay-75"
+            }
+          >
+            Order Preview
+          </NavLink>
+          <NavLink
+            to={"/inventory"}
+            className={({ isActive }) =>
+              isActive
+                ? "text-orange-400"
+                : "hover:text-orange-400 transition delay-75"
+            }
+          >
+            Inventory
+          </NavLink>
+          <NavLink
+            to={"/login"}
+            className={({ isActive }) =>
+              isActive
+                ? "text-orange-400"
+                : "hover:text-orange-400 transition delay-75"
+            }
+          >
+            Login
+          </NavLink>
         </Menu>
       </Navbar.Center>
     </Navbar>

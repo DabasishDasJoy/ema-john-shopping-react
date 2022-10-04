@@ -25,7 +25,7 @@ const Product = ({ product: { id, name, seller, ratings, img, price } }) => {
           </p>
         </div>
       </Card.Body>
-      <button className="bg-orange-300 absolute bottom-0 w-full m-0 h-[48px] border-t-[1px] border-t-[#95A0A7] font-normal text-[15px] leadin-[18px] tracking-[0.0125em] text-[#0E161A]">
+      <button className="bg-[#FFE0B3] absolute bottom-0 w-full m-0 h-[48px] border-t-[1px] border-t-[#95A0A7] font-normal text-[15px] leadin-[18px] tracking-[0.0125em] text-[#0E161A] ">
         Add to Cart
       </button>
     </Card>
