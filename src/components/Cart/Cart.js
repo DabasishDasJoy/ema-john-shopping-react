@@ -1,5 +1,6 @@
 import { ArrowRightIcon, TrashIcon } from "@heroicons/react/24/solid";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Cart = ({ cart }) => {
   const totalItems = cart.reduce((prev, curr) => prev + curr.quantity, 0);
@@ -37,7 +38,8 @@ const Cart = ({ cart }) => {
           Clear Cart <TrashIcon className="h-4 w-4"></TrashIcon>
         </button>
         <button className="w-[80%] h-[48px] rounded bg-[#FF9900] text-white font-normal leading-[20px] flex justify-center items-center gap-1">
-          Review Order <ArrowRightIcon className="h-4 w-4 stroke-2" />
+          <Link to={"/orderPreview"}>Review Order</Link>{" "}
+          <ArrowRightIcon className="h-4 w-4 stroke-2" />
         </button>
       </div>
     </div>

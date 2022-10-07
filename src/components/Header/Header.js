@@ -41,7 +41,7 @@ const Header = ({ toggleVisible }) => {
             Order
           </NavLink>
           <NavLink
-            to={"/order-preview"}
+            to={"/orderPreview"}
             className={({ isActive }) =>
               isActive
                 ? "text-orange-400"
